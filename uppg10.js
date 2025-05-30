@@ -1,6 +1,22 @@
+
+
 function uppg10(){
-    const numbers = [5, 12, 7, 10, 20, 9, 11];
-  
+  const numbers = [5, 12, 7, 10, 20, 9, 11];
+
+  const bigEven = [];
+  const smallOdd = [];
+  const other = [];
+
+    for (num of numbers) {
+      if (num > 10 && num % 2 === 0) {
+        bigEven.push(num);
+      } else if (num < 10 && num % 2 !== 0) {
+        smallOdd.push(num);
+      } else {
+        other.push(num);
+      }
+
+    }
     // skapa tre arrayer - bigEven, smallOdd, other
     // loopa igenom numbers och placera talen i respektive array
     // bigEven ska innehålla tal större än 10 och jämnt delbara med 2
@@ -8,10 +24,11 @@ function uppg10(){
     // other ska innehålla alla andra tal
     // returnera ett objekt med de tre arrayerna
 
-  
+    return {bigEven, smallOdd, other}
     
-  
   }
-  
+console.log(uppg10())
+uppg10();
+
   module.exports = { uppg10 };
   
